@@ -1,0 +1,11 @@
+sort1 uses: BUBBLE SORT
+
+How do you know?: It has the best performance with sorted elements. It has the worst performance with reversed elements.
+
+sort2 uses: MERGE SORT
+
+How do you know?: It keeps a good performance for all 3 cases.
+
+sort3 uses: SELECTION SORT
+
+How do you know?: It has the worst performance for the sorted and random cases. Just  surpass the "bubble sort" performance when the lists are reversed.
