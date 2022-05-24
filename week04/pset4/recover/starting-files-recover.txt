@@ -1,0 +1,3 @@
+Get the starting files typing this into the terminal:
+
+wget https://cdn.cs50.net/2021/fall/psets/4/recover.zip

@@ -1,0 +1,3 @@
+Get the starting files typing the next in the terminal.
+
+wget https://cdn.cs50.net/2021/fall/labs/3/sort.zip
