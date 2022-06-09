@@ -6,7 +6,7 @@ Course site: https://cs50.harvard.edu/x/2022/
 ## Weeks
 - **Week 0** Scratch
 - **Week 1** C
-    - Psets1
+    - Pset 1
         - [x] `hello/hello.c`
         - [x] `credit/credit.c`
         - [x] `mario/mario.c`
@@ -14,14 +14,14 @@ Course site: https://cs50.harvard.edu/x/2022/
         - [x] `population/population.c` (This problem is from the 2021 edition and not this one, but I decided to include it.)
 
 - **Week 2** Arrays
-    - Psets2
+    - Pset 2
         - [x] `readability/readability.c`
         - [x] `substitution/substitution.c`
     - lab2
         - [x] `scrabble.c`
 
 - **Week 3** Algorithms
-    - Psets3
+    - Pset 3
         - [x] `plurality/plurality.c`
         - [x] `runoff/runoff.c`
     - lab3
@@ -35,26 +35,50 @@ Course site: https://cs50.harvard.edu/x/2022/
         - `sorted5000.txt`
         - `sorted10000.txt`
         - `sorted50000.txt`
-        - `tiles_log.txt`
-        - `starting-files-lab3.txt` - Get the necessary files to start with lab 3.
+        - `times_log.txt`
 
 - **Week 4** Memory
-    - Psets 4:
+    - Pset 4:
         - [x] `filter-more/filter.c`
         - `filter-morebmp.h`
         - `filter-morefilter.c`
         - `filter-morehelpers.c`
         - `filter-morehelpers.h`
         - `filter-moreMakefile`
-        - `filter-more/starting-files-filter-more.txt` - Get the necessary files to start with pset4.
     - Lab 4:
         - [x] `volume/volume.c`
-        - `input.wav` - media files
-        - `starting-files-lab4.txt` - Get the necessary files to start with lab 4.
 
 - **Week 5** Data Structures
+    - Pset 5:
+        - [x] `dictionary.c`
+        - [x] `dictionary.c`
+        - `Makefile`
+        - `speller.c`
+    - Lab 5:
+        - [x] `inheritance.c`
+
 - **Week 6** Python
+    - Pset 6:
+        - [x] `sentimental-credit/credit.py`
+        - [x] `sentimental-hello/hello.py`
+        - [x] `sentimental-mario-more/mario.py`
+        - [x] `sentimental-readability/readability.py`
+        - [x] `dna/dna.py`
+        - `dna/databases/large.csv`
+        - `dna/databases/small.csv`
+        - `dna/sequences/1-20.txt` (20 txt files)
+    - Lab 6:
+        - [x] `tournament.py`
+        - `2018m.csv`
+        - `2019w.csv`
+
 - **Week 7** SQL
+    - Pset 7:
+        - [x] `movies/1-13.sql` (13 sql files)
+        - `db_schema.txt`
+    - Lab 7:
+        - [x] `songs/1-8.sql` (8 sql files)
+        - `songs/db_schema.txt`
 - **Week 8** HTML, CSS, JavaScript
 - **Week 9** Flask
 - **Week 10** Emoji

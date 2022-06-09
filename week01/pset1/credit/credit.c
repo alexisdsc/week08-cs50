@@ -80,7 +80,7 @@ int main(void)
         printf("AMEX\n");
     }
     else if (digits == 16 && (first_two_digits == 51 || first_two_digits == 52 || first_two_digits == 53 || first_two_digits == 54
-                              || first_two_digits == 55) && !not_valid)
+                            || first_two_digits == 55) && !not_valid)
     {
         printf("MASTERCARD\n");
     }

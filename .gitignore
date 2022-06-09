@@ -9,32 +9,22 @@
 
 ### Above combination will ignore all files without extension ###
 
-# Ignore files with extension `.class` & `.sm`
-*.class
-*.sm
-
-# Ignore `bin` dir
-bin/
-# or
-*/bin/*
-
-# Unignore all `.jar` in `bin` dir
-!*/bin/*.jar
-
-# Ignore all `library.jar` in `bin` dir
-*/bin/library.jar
-
-# Ignore a file with extension
-relative/path/to/dir/filename.extension
-
-# Ignore a file without extension
-relative/path/to/dir/anotherfile
-
 # ignore media files
 *.wav
 *.raw
 *.bmp
 *.jpg
 
-# Exclude all files without extensions except:
+# ignore databases
+*.db
+
+# ignore specific files in folders
+week03/
+week04/pset4/filter-more/images/
+week05/pset5/speller/texts/
+week05/pset5/speller/keys/
+week05/pset5/speller/dictionaries/
+.vscode/
+
+# Exclude all files without extensions EXCEPT:
 !Makefile
