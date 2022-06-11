@@ -40,11 +40,10 @@ Course site: https://cs50.harvard.edu/x/2022/
 - **Week 4** Memory
     - Pset 4:
         - [x] `filter-more/filter.c`
-        - `filter-morebmp.h`
-        - `filter-morefilter.c`
-        - `filter-morehelpers.c`
-        - `filter-morehelpers.h`
-        - `filter-moreMakefile`
+        - `filter-more/bmp.h`
+        - `filter-more/helpers.c`
+        - `filter-more/helpers.h`
+        - `filter-more/Makefile`
     - Lab 4:
         - [x] `volume/volume.c`
 
@@ -79,6 +78,10 @@ Course site: https://cs50.harvard.edu/x/2022/
     - Lab 7:
         - [x] `songs/1-8.sql` (8 sql files)
         - `songs/db_schema.txt`
+        - [x] `fiftyville/answers.txt`
+        - [x] `fiftyville/log.sql`
+        - `fiftyville/db_schema_fiftyville.txt`
+        - `fiftyville/db_tables_fiftyville.txt`
 - **Week 8** HTML, CSS, JavaScript
 - **Week 9** Flask
 - **Week 10** Emoji

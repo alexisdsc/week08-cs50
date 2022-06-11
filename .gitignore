@@ -17,9 +17,9 @@
 
 # ignore databases
 *.db
+query.sql
 
 # ignore specific files in folders
-week03/
 week04/pset4/filter-more/images/
 week05/pset5/speller/texts/
 week05/pset5/speller/keys/
