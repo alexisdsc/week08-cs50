@@ -85,9 +85,9 @@ Course site: https://cs50.harvard.edu/x/2022/
 
 - **Week 8** HTML, CSS, JavaScript
     - Pset 8:
-        - [x] `homepage/index.html`
-        - [x] `homepage/styles.css`
-        - [x] `homepage/sidebar.css`
+        - [ ] `homepage/index.html`
+        - [ ] `homepage/styles.css`
+        - [ ] `homepage/sidebar.css`
     - Lab8 8:
         - [x] `trivia/index.html`
         - [x] `trivia/styles.css`
