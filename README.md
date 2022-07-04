@@ -82,6 +82,15 @@ Course site: https://cs50.harvard.edu/x/2022/
         - [x] `fiftyville/log.sql`
         - `fiftyville/db_schema_fiftyville.txt`
         - `fiftyville/db_tables_fiftyville.txt`
+
 - **Week 8** HTML, CSS, JavaScript
+    - Pset 8:
+        - [x] `homepage/index.html`
+        - [x] `homepage/styles.css`
+        - [x] `homepage/sidebar.css`
+    - Lab8 8:
+        - [x] `trivia/index.html`
+        - [x] `trivia/styles.css`
+
 - **Week 9** Flask
 - **Week 10** Emoji
