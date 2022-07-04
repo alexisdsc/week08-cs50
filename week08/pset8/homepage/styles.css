@@ -1,0 +1,49 @@
+body {
+    /*Night Mode Color Base*/
+    /*background-color: #131313;*/
+    background-image: url(https://source.unsplash.com/random/1920×1080/?city);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #dedede;
+}
+
+h1 {
+    font-family: 'Share Tech Mono', monospace;
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+#main-info {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 75px;
+    padding-bottom: 50px;
+    /*background-color: #232323;*/
+    background-color: rgba(27, 27, 27, 0.97);
+    border-style: solid;
+    border-radius: 8px;
+    border-color: #565656;
+    box-shadow: 0 5px 8px black;
+}
+
+#my-icons {
+    padding-top: 10%;
+    color: antiquewhite;
+    text-align: center;
+}
+
+.text-long {
+    font-family: 'Anek Latin', sans-serif;
+    font-size: 1.3em;
+}
+
+button {
+    background-color: transparent;
+    border: 0px;
+}
+
+.fa-brands {
+    font-size: 25px;
+    color: whitesmoke;
+}

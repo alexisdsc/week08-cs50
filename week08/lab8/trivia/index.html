@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // Add code to check answers to questions
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3 id="q1">How many planets are there in our Solar System?</h3>
+                <p id="c1"></p>
+                <ul>
+                    <li class="options">
+                        <button type="submit" id="op1"> Ten </button>
+                    </li>
+                    <li class="options">
+                        <button type="submit" id="op2"> Nine </button>
+                    </li>
+                    <li class="options">
+                        <button type="submit" id="op3"> Eight </button>
+                    </li>
+                    <li class="options">
+                        <button type="submit" id="op4"> Seven </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- Add free response question here -->
+                <h3>What is the name of the fourth planet?</h3>
+                <p id="c2"></p>
+                <input type="text" id="ansfield">
+                <button id="checkbtn">Check the Answer!</button>
+            </div>
+        </div>
+
+
+        <script>
+            let ans2 = document.querySelector('#ansfield');
+
+            // Button - Option 1
+            let button1 = document.querySelector('#op1');
+            document.querySelector('#op1').addEventListener('click', function()
+            {
+                button1.style.backgroundColor = 'red';
+                document.getElementById("c1").innerHTML = "Incorrect"
+            });
+            // Button - Option 2
+            let button2 = document.querySelector('#op2');
+            document.querySelector('#op2').addEventListener('click', function()
+            {
+                button2.style.backgroundColor = 'red';
+                document.getElementById("c1").innerHTML = "Incorrect"
+            });
+            // Button - Option 3
+            let button3 = document.querySelector('#op3');
+            document.querySelector('#op3').addEventListener('click', function()
+            {
+                button3.style.backgroundColor = 'green';
+                document.getElementById("c1").innerHTML = "Correct!"
+            });
+            // Button - Option 4
+            let button4 = document.querySelector('#op4');
+            document.querySelector('#op4').addEventListener('click', function()
+            {
+                button4.style.backgroundColor = 'red';
+                document.getElementById("c1").innerHTML = "Incorrect"
+            });
+
+            document.querySelector('#checkbtn').addEventListener('click', function(){
+                answer = document.getElementById("ansfield")
+                if (answer.value == "Mars") {
+                    ans2.style.backgroundColor = 'green';
+                    document.getElementById("c2").innerHTML = "Correct!";
+                }
+                else {
+                    ans2.style.backgroundColor = 'red';
+                    document.getElementById("c2").innerHTML = "Incorrect";
+                }
+            });
+        </script>
+    </body>
+</html>
