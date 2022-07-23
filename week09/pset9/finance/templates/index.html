@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table table-stripped">
+        <thead>
+            <th class="text-start">Symbol</th>
+            <th class="text-start">Name</th>
+            <th class="text-end">Shares</th>
+            <th class="text-end">Price</th>
+            <th class="text-end">TOTAL</th>
+        </thead>
+        <tbody>
+            {% for share in shares %}
+                <tr>
+                    <td class="text-start">{{ share["info"]["symbol"] }}</td>
+                    <td class="text-start">{{ share["info"]["name"] }}</td>
+                    <td class="text-end">{{ share["number"] }}</td>
+                    <td class="text-end">{{ share["info"]["price"] | usd }}</td>
+                    <td class="text-end">{{ share["total"] | usd }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                <td class="border-0 text-end">{{ userdata[0]["cash"] | usd }}</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+                <td class="border-0 text-end">{{ (userdata[0]["cash"] + total_price_shares) | usd }}</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}

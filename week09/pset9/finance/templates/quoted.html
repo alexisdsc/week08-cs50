@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quotd
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        A share of {{ share_info["name"] }} ({{ share_info["symbol"] }}) costs {{ share_info["price"] | usd }}.
+    </div>
+{% endblock %}
