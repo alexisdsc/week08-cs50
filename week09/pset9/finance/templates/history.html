@@ -4,9 +4,13 @@
     History
 {% endblock %}
 
+{% block currentuser %}
+    <li class="nav-item"><a class="nav-link fw-bold" href="/settings">{{ userdata[0]["username"] }}</a></li>
+{% endblock %}
+
 {% block main %}
     <div class="mb-3">
-        <table class="table">
+        <table class="table table-dark table-stripped">
             <thead>
                 <tr>
                     <th class="text-start">Symbol</th>

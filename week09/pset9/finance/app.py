@@ -84,7 +84,7 @@ def buy():
         if not shares:
             return apology("Must provide a number of shares", 400)
         # check shares is numeric, integer and positive
-        if  not shares.isdecimal():
+        if not shares.isdecimal():
             return apology("Shares must be integer", 400)
 
         # get current user info
@@ -106,7 +106,10 @@ def buy():
         # redirect to index
         return redirect("/")
 
-    return render_template("buy.html")
+    # get userdata
+    userdata = db.execute("SELECT username FROM users WHERE id=?", session["user_id"])
+
+    return render_template("buy.html", userdata=userdata)
 
 
 @app.route("/history")
@@ -115,8 +118,9 @@ def history():
     """Show history of transactions"""
     # extract info from history table
     rows = db.execute("SELECT * FROM history WHERE user_id=? ORDER BY transaction_time DESC", session["user_id"])
+    userdata = db.execute("SELECT username FROM users WHERE id=?", session["user_id"])
 
-    return render_template("history.html", rows=rows)
+    return render_template("history.html", rows=rows, userdata=userdata)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -179,10 +183,12 @@ def quote():
         if not share_info:
             return apology("Symbol does not exist", 400)
         # render symbol and its price times shares
-        return render_template("quoted.html", share_info=share_info)
+        userdata = db.execute("SELECT username FROM users WHERE id=?", session["user_id"])
+        return render_template("quoted.html", share_info=share_info, userdata=userdata)
 
     # When accessed via GET (as by clicking link or redirect)
-    return render_template("quote.html")
+    userdata = db.execute("SELECT username FROM users WHERE id=?", session["user_id"])
+    return render_template("quote.html", userdata=userdata)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -267,5 +273,81 @@ def sell():
         return redirect("/")
 
     # Get all symbols of current user
-    symbols = db.execute("SELECT symbol FROM history WHERE user_id=? GROUP BY symbol", session["user_id"])
-    return render_template("sell.html", symbols=symbols)
+    symbols = db.execute("SELECT symbol, SUM(shares) AS 'shares' FROM history WHERE user_id=? GROUP BY symbol", session["user_id"])
+    userdata = db.execute("SELECT username FROM users WHERE id=?", session["user_id"])
+    return render_template("sell.html", symbols=symbols, userdata=userdata)
+
+
+# EXTRA FEATURES
+
+
+@app.route("/settings", methods=["GET", "POST"])
+@login_required
+def settings():
+    """ User settings """
+    userdata = db.execute("SELECT username FROM users WHERE id=?", session["user_id"])
+    return render_template("settings.html", userdata=userdata)
+
+
+@app.route("/changepassword", methods=["GET", "POST"])
+@login_required
+def changepassword():
+    """ Change the passwrod user """
+    # when submitting method is "POST"
+    if request.method == "POST":
+        old = request.form.get("oldpassword")
+        new = request.form.get("newpassword")
+        confirmation = request.form.get("confirmation")
+
+        # Check user typed new password
+        if not new:
+            return apology("Type your new password", 400)
+        # Check user typed new password confirmation
+        if not confirmation:
+            return apology("Type you new password confirmation", 400)
+        # Check new password and confirmation are the same
+        if new != confirmation:
+            return apology("New password and confirmation are not the same", 400)
+        # Check user old password is correct
+        userdata = db.execute("SELECT hash FROM users WHERE id=?", session["user_id"])
+        if check_password_hash(old, userdata[0]["hash"]):
+            return apology("Your current password is incorrect", 400)
+
+        # Update new password in the database
+        db.execute("UPDATE users SET hash=? WHERE id=?", generate_password_hash(new), session["user_id"])
+
+        # redirect to logout
+        return redirect("/logout")
+
+    userdata = db.execute("SELECT username FROM users WHERE id=?", session["user_id"])
+    return render_template("/changepassword.html", userdata=userdata)
+
+
+@app.route("/addcash", methods=["GET", "POST"])
+@login_required
+def addcash():
+    """ Change the passwrod user """
+
+    # When accesed with method "POST"
+    if request.method == "POST":
+        cash = request.form.get("addcash")
+        # Check cash is not empty
+        if not cash:
+            return apology("Select the amount")
+        # check is numeric
+        if not cash.isdecimal():
+            return apology("Must be a number and integer :/")
+        # Make sure import is at least 10 dollars
+        if int(cash) < 10:
+            return apology("Minimum import must be of $10")
+
+        # update
+        userdata = db.execute("SELECT username, cash FROM users WHERE id=?", session["user_id"])
+        total = userdata[0]["cash"] + int(cash)
+        db.execute("UPDATE users SET cash=? WHERE id=?", total, session["user_id"])
+
+        # show the total amount after the addition
+        return render_template("cashd.html", total=total, userdata=userdata)
+
+    userdata = db.execute("SELECT username, cash FROM users WHERE id=?", session["user_id"])
+    return render_template("cash.html", userdata=userdata)

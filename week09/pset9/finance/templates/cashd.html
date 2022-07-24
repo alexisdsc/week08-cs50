@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    New amount
+{% endblock %}
+
+{% block currentuser %}
+    <li class="nav-item"><a class="nav-link fw-bold" href="/settings">{{ userdata[0]["username"] }}</a></li>
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <p>Your previous amount was <span class="fw-bold">{{ userdata[0]["cash"] | usd }}</span></p>
+        <p>Your current amount is:</p>
+        <figure class="text-center">
+        <blockquote class="blockquote alert alert-success col-4 mx-auto">
+            <p class="fw-bold">{{ total |usd }}</p>
+        </blockquote>
+    </div>
+{% endblock %}

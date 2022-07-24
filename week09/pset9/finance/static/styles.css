@@ -1,3 +1,16 @@
+main{
+    color: #ddd;
+}
+
+.form-dark-mode {
+    background-color: #333;
+    color: #aaa;
+}
+
+.dark-mode-bg {
+    background: #161819;
+}
+
 /* Size for brand */
 nav .navbar-brand
 {

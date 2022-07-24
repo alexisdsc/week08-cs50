@@ -4,10 +4,14 @@
     Quote
 {% endblock %}
 
+{% block currentuser %}
+    <li class="nav-item"><a class="nav-link fw-bold" href="/settings">{{ userdata[0]["username"] }}</a></li>
+{% endblock %}
+
 {% block main %}
     <form action="/quote" method="post">
         <div class="mb-3">
-            <input autofocus class="form-control mx-auto w-auto" id="symbol" name="symbol" placeholder="Symbol" type="text">
+            <input autofocus class="form-control mx-auto w-auto form-dark-mode" id="symbol" name="symbol" placeholder="Symbol" type="text">
         </div>
         <button class="btn btn-primary" type="submit">Quote</button>
     </form>

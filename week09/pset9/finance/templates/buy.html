@@ -4,13 +4,17 @@
     Buy
 {% endblock %}
 
+{% block currentuser %}
+    <li class="nav-item"><a class="nav-link fw-bold" href="/settings">{{ userdata[0]["username"] }}</a></li>
+{% endblock %}
+
 {% block main %}
     <form action="/buy" method="post">
         <div class="mb-3">
-            <input type="text" autocomplete="off" class="form-control mx-auto w-auto" id="symbol" name="symbol" placeholder="Symbol">
+            <input type="text" autocomplete="off" class="form-control mx-auto w-auto form-dark-mode" id="symbol" name="symbol" placeholder="Symbol">
         </div>
         <div class="mb-3">
-            <input type="number" class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Shares" min="1">
+            <input type="number" class="form-control mx-auto w-auto form-dark-mode" id="shares" name="shares" placeholder="Shares" min="1">
         </div>
         <button class="btn btn-primary" type="submit">Buy</button>
     </form>

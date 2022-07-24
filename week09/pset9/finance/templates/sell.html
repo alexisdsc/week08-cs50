@@ -4,18 +4,24 @@
     Sell
 {% endblock %}
 
+{% block currentuser %}
+    <li class="nav-item"><a class="nav-link fw-bold" href="/settings">{{ userdata[0]["username"] }}</a></li>
+{% endblock %}
+
 {% block main %}
     <form action="/sell" method="post">
         <div class="mb-3">
-            <select class="form-select mx-auto w-auto" name="symbol">
+            <select class="form-select mx-auto w-auto form-dark-mode" name="symbol">
                 <option disabled selected>Symbol</option>
                 {% for symbol in symbols %}
+                {% if symbol["shares"] >= 1 %}
                 <option value="{{symbol['symbol']}}">{{ symbol["symbol"] }}</option>
+                {% endif %}
                 {% endfor %}
             </select>
         </div>
         <div class="mb-3">
-            <input type="number" class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Shares" min="1">
+            <input type="number" class="form-control mx-auto w-auto form-dark-mode" id="shares" name="shares" placeholder="Shares" min="1">
         </div>
         <div class="mb-3">
             <button class="btn btn-primary" type="submit">Sell</button>

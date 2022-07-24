@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change password
+{% endblock %}
+
+{% block currentuser %}
+    <li class="nav-item"><a class="nav-link fw-bold" href="/settings">{{ userdata[0]["username"] }}</a></li>
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <p>Your current amount is <span class="fw-bold">{{ userdata[0]["cash"] | usd }}</span></p>
+        <p>How much chash you wan to add to your current amount?</p>
+    </div>
+    <form action="/addcash" method="post">
+        <div class="mb-3">
+            <input type="number" class="form-dark-mode" id="addcash" name="addcash" min="10">
+        </div>
+        <button class="btn btn-primary" type="submit">Add cash</button>
+    </form>
+{% endblock %}

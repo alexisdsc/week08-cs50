@@ -26,6 +26,7 @@ week05/pset5/speller/texts/
 week05/pset5/speller/keys/
 week05/pset5/speller/dictionaries/
 .vscode/
+week09/pset9/finance/flask_session/
 
 # Exclude all files without extensions EXCEPT:
 !Makefile

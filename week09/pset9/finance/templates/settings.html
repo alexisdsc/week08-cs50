@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Quotd
+    Settings
 {% endblock %}
 
 {% block currentuser %}
@@ -9,7 +9,8 @@
 {% endblock %}
 
 {% block main %}
-    <div class="mb-3">
-        A share of {{ share_info["name"] }} ({{ share_info["symbol"] }}) costs {{ share_info["price"] | usd }}.
+    <div class="d-grid gap-2 col-4 mx-auto">
+        <a class="btn btn-primary" href="/changepassword" role="button">Change Password</a>
+        <a class="btn btn-primary" href="/addcash" role="button">Add Cash</a>
     </div>
 {% endblock %}
